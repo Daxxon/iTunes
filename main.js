@@ -1,7 +1,6 @@
 let searchBar = document.getElementById('searchBar');
 let resultsContainer = document.getElementById('searchResultsContainer');
 let previewUrls = [];
-
 function fetchArtistData(myQuery) {
   // let queryURL = `https://itunes.apple.com/search?term=${myQuery}&entity=allArtist&attribute=allArtistTerm`;
   let queryURL = `https://itunes.apple.com/search?term=${myQuery}&limit=28`;
@@ -33,6 +32,13 @@ function checkForSubmission() {
 }
 
 function createTiles(songList) {
+  previewUrls = [];
+  resultsContainer.innerHTML = '';
+  // let oldTiles = document.getElementsByClassName('tile');
+  //   for (let i=0; i<oldTiles.length; i++) {
+  //     resultsContainer.removeChild(oldTiles[i]);
+  //   }
+
   for (let i=0; i<songList.length; i++) {
     newTile = document.createElement('div');
     newTile.setAttribute('class', 'tile');
